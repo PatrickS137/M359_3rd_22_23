@@ -13,6 +13,6 @@ public class Mathws5 {
         double x2 = myObj.nextDouble();
         System.out.println("Enter y2:");
         double y2 = myObj.nextDouble();
-        double distance = sqrt(pow((x2-x1),2)+pow((y2-y1)));
+        double distance = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
     }
 }

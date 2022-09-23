@@ -3,7 +3,7 @@ package Unit3.Examples;
 public class PizzaTester {
     /*this class will test our Pizza code
      * it will contain the main method
-     *shortcut:psvm
+     *shortcut:psvm a
      */
     public static void main(String[] args) {
 
@@ -15,5 +15,6 @@ public class PizzaTester {
         System.out.println(dd);
         System.out.println(thin);
         System.out.println(thinCheese);
+        System.out.println(dd.compareTo(thin));
     }
 }
