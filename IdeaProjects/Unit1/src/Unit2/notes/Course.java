@@ -11,14 +11,29 @@ public class Course {
         this.teacherName = teacherName;
     }
 
-    public boolean equals(Shoe other){
+    public boolean equals(Course other){
 
-        return(this.classTitle.equals(other.classTitle) && this.numStudentsEnrolled.equals(other.numStudentsEnrolled));
+        if(this.classTitle.equals(other.classTitle) &&
+                this.numStudentsEnrolled == other.numStudentsEnrolled){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public int compareTo(Shoe other) {
-        if (this.classTitle.equals(other.classTitle)) {
-            if (this.numStudentsEnrolled.compareTo(other.numStudentsEnrolled) < 0) {
+    public int compareTo(Course other) {
+        int diff = this.classTitle.compareTo(other.classTitle);
+        if (diff != 0){
+            return diff;  //this value tells us how the classTitles compare
+        }
+        else{ //diff = 0 and compare numStudents
+            return this.numStudentsEnrolled - other.numStudentsEnrolled;
+        }
+
+    /*
+        if (this.classTitle.compareTo(other.classTitle) != 0) {
+            if (this.classTitle.compareTo(other.classTitle) <= 0 || numStudents) {
                 return (-1);
             }
             else if (diff == 0) {
@@ -30,7 +45,7 @@ public class Course {
 
         }
     }
-
+*/
     public void setClassTitle(String classTitle) {
         this.classTitle = classTitle;
     }
