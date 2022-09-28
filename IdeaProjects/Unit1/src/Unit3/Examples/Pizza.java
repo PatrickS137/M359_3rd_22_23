@@ -85,7 +85,7 @@ public class Pizza {
         isDeepDish = deepDish;
     }
 
-    public int compareTo(Pizza other){
+    public String compareTo(Pizza other){
 
         int sizeDiff = this.getInches() - other.getInches();
         if (sizeDiff != 0){
@@ -98,6 +98,7 @@ public class Pizza {
             }
             //return("there are " + this.getNumToppings()-other.getNumToppings() + "a");
         }
+        return("a");
     }
 
 

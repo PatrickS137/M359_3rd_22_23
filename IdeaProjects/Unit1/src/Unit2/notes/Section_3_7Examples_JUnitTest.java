@@ -1,6 +1,5 @@
 package Unit2.notes;
 
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.After;
@@ -16,6 +15,8 @@ import org.junit.Test;
  * triangle next to the class header OR you can run tests one at a time by clicking
  * the single green triangle next to the specific test method header
  */
+
+/*
 public class Section_3_7Examples_JUnitTest {
     // Variables used for testing equals and compareTo
     Shoe herAirForceOnes, hisAirForceOnes, hisAdidas, herConverse;
@@ -160,3 +161,4 @@ public class Section_3_7Examples_JUnitTest {
     }
 
 }
+*/

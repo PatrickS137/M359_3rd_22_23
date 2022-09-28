@@ -1,5 +1,5 @@
 package Unit2.notes;
-
+/*
 public class Course {
     private String classTitle;
     private int numStudentsEnrolled;
@@ -30,7 +30,7 @@ public class Course {
         else{ //diff = 0 and compare numStudents
             return this.numStudentsEnrolled - other.numStudentsEnrolled;
         }
-
+*/
     /*
         if (this.classTitle.compareTo(other.classTitle) != 0) {
             if (this.classTitle.compareTo(other.classTitle) <= 0 || numStudents) {
@@ -46,6 +46,8 @@ public class Course {
         }
     }
 */
+
+        /*
     public void setClassTitle(String classTitle) {
         this.classTitle = classTitle;
     }
@@ -70,3 +72,4 @@ public class Course {
         return teacherName;
     }
 }
+*/
