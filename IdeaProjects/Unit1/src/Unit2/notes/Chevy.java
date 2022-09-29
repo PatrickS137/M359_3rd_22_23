@@ -15,16 +15,17 @@ public class Chevy {
 
     final String MAKE = "Chevrolet";
     final double TAXRATE = 1.122;
-    final double LUXURYPRICE = 1.20;
+    final double LUXURYPRICE = 0.20;
     final double FOURPRICE = 3500;
-    final double SPORTSPRICE = 1.15;
+    final double SPORTSPRICE = 0.15;
     final double SPORTSEFFICIENCY = 0.80;
 
     //return vars
     private boolean equalCar;
     private String newUsed;
     private String finalOutput;
-    public Chevy(boolean luxuryPackage, boolean fourPackage, boolean sportPackage) {
+
+    public Chevy() {
         this.year = 2021;
         this.mileage = 0;
         this.fuelEfficiency = 35;
@@ -35,7 +36,8 @@ public class Chevy {
         this.fourPackage = fourPackage;
         this.sportPackage = sportPackage;
     }
-//------------------------------------------------
+
+    //------------------------------------------------
     public Chevy(int year, int mileage, double fuelEfficiency, double basePrice, String model, String color, boolean luxuryPackage, boolean fourPackage, boolean sportPackage) {
         this.year = year;
         this.mileage = mileage;
@@ -47,41 +49,14 @@ public class Chevy {
         this.fourPackage = fourPackage;
         this.sportPackage = sportPackage;
     }
-//------------------------------------------------
-    public int compareTo(Chevy other){
-        if (this.mileage > other.mileage){
-            return(this.mileage);
-        }
-        else{
-            return(other.mileage);
-        }
-    }
-//------------------------------------------------
-    public boolean equals(Chevy other){
-        if (this.mileage < 200){
-            newUsed = "new";
-        }
-        else{
-            newUsed = "used";
-        }
 
-        if(this.model.equals(other.model) && this.color.equals(other.color)
-                && this.newUsed.equals(other.newUsed)){
-            equalCar = true;
-        }
-        else{
-            equalCar = false;
-        }
-
-        return(equalCar);
-    }
-//------------------------------------------------
-    public String toString(Chevy other){
+    //------------------------------------------------
+    public String toString(Chevy other) {
         finalOutput += "***************************************************\n";
         finalOutput += ("\tBASE PRICE:\t\t\t\t\t$" + this.basePrice);
         finalOutput += ("\n\tMILES:\t\t\t\t\t\t$" + this.mileage);
         finalOutput += ("\n\tFUEL EFFICIENCY:\t\t\t$" + this.fuelEfficiency);
-
+        grandTotal = TAXRATE * (upgradePrice + basePrice);
         if (luxuryPackage == true) {
             finalOutput += ("\n\t - Luxury Package");
         }
@@ -90,16 +65,56 @@ public class Chevy {
         }
         if (sportPackage == true) {
             finalOutput += ("\n\t - Sport Package");
-        }
-        else{
+        } else {
             finalOutput += ("\n\t - None");
         }
 
         finalOutput += "\n\n";
         //finalOutput += ("PRICE WITH UPGRADES:\t\t$" + )
-        return(finalOutput);
+        return (finalOutput);
     }
-//------------------------------------------------
+    //------------------------------------------------
+    public int compareTo(Chevy other) {
+        if (this.mileage > other.mileage) {
+            return (this.mileage);
+        } else {
+            return (other.mileage);
+        }
+    }
+
+    //------------------------------------------------
+    public boolean equals(Chevy other) {
+        if (this.mileage < 200) {
+            newUsed = "new";
+        } else {
+            newUsed = "used";
+        }
+
+        if (this.model.equals(other.model) && this.color.equals(other.color)
+                && this.newUsed.equals(other.newUsed)) {
+            equalCar = true;
+        } else {
+            equalCar = false;
+        }
+
+        return (equalCar);
+    }
+
+    //------------------------------------------------
+    public void calcPrice(Chevy other) {
+        if (luxuryPackage == true) {
+            upgradePrice += basePrice * LUXURYPRICE;
+        }
+        if (fourPackage == true) {
+            upgradePrice += FOURPRICE;
+        }
+        if (sportPackage == true) {
+            upgradePrice += basePrice * SPORTSPRICE;
+            fuelEfficiency = fuelEfficiency * SPORTSEFFICIENCY;
+        }
+    }
+
+    //------------------------------------------------
 
     public int getYear() {
         return year;
@@ -109,19 +124,19 @@ public class Chevy {
         this.year = year;
     }
 
-    public int getMileage() {
+    public int getMiles() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public void setMiles(int mileage) {
         this.mileage = mileage;
     }
 
-    public double getFuelEfficiency() {
+    public double getMpg() {
         return fuelEfficiency;
     }
 
-    public void setFuelEfficiency(double fuelEfficiency) {
+    public void setMpg(double fuelEfficiency) {
         this.fuelEfficiency = fuelEfficiency;
     }
 
@@ -133,11 +148,50 @@ public class Chevy {
         this.basePrice = basePrice;
     }
 
-    public double getUpgradePrice() {
-        return upgradePrice;
+    public String getMAKE() {
+        return MAKE;
     }
 
-    public void setUpgradePrice(double upgradePrice) {
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public boolean getLuxuryPkg() {
+        return luxuryPackage;
+    }
+
+    public void setLuxuryPkg(boolean luxuryPackage) {
+        this.luxuryPackage = luxuryPackage;
+    }
+
+    public boolean get4WDPkg() {
+        return fourPackage;
+    }
+
+    public void set4WDPkg(boolean fourPackage) {
+        this.fourPackage = fourPackage;
+    }
+
+    public void setHasSportPkg(boolean sportPackage) {
+        this.sportPackage = sportPackage;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPriceWithUpgrades() {
+        return upgradePrice;
+    }
+    public void setPriceWithUpgrades(double upgradePrice) {
         this.upgradePrice = upgradePrice;
     }
 
@@ -149,44 +203,11 @@ public class Chevy {
         this.grandTotal = grandTotal;
     }
 
-    public String getModel() {
-        return model;
-    }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isLuxuryPackage() {
-        return luxuryPackage;
-    }
-
-    public void setLuxuryPackage(boolean luxuryPackage) {
-        this.luxuryPackage = luxuryPackage;
-    }
-
-    public boolean isFourPackage() {
-        return fourPackage;
-    }
-
-    public void setFourPackage(boolean fourPackage) {
-        this.fourPackage = fourPackage;
-    }
 
     public boolean isSportPackage() {
         return sportPackage;
-    }
-
-    public void setSportPackage(boolean sportPackage) {
-        this.sportPackage = sportPackage;
     }
 
     public boolean isEqualCar() {
