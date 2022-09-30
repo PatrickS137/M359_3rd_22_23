@@ -7,14 +7,17 @@ public class ChevyDriverStudent {
         Chevy traxLux = new Chevy();
 
         // Set traxBase mileage to 15
-
+        traxBase.setMiles(15);
         // Set traxLux mileage to 175 with both a luxury and 4WD package
+        traxLux.setMiles(175);
+        traxLux.setLuxuryPkg(true);
+        traxLux.set4WDPkg(true);
 
         // Printouts
-    //    System.out.println("*** VEHICLE PRINTOUTS ***");
-    //    System.out.println(traxBase);
-    //    System.out.println("After giving the base car a luxury pkg, 4WD package, \nand updating" +
-    //            "miles to 175, its data prints out as:");
+        System.out.println("*** VEHICLE PRINTOUTS ***");
+        System.out.println(traxBase);
+        System.out.println("After giving the base car a luxury pkg, 4WD package, \nand updating" +
+                "miles to 175, its data prints out as:" );
         System.out.println(traxLux);
 
         // Create two Chevy Corvettes to test compareTo and Equals
@@ -25,36 +28,36 @@ public class ChevyDriverStudent {
                 "Fire Red", true, false, true);
 
         // Display mileage comparison
-      //  System.out.println("*** COMPARE BY MILEAGE ***");
-      //  System.out.println("\tClassic Corvette vs. Sport Corvette");
-      //  System.out.print("\tWhich car has the least miles?\t");
+        System.out.println("*** COMPARE BY MILEAGE ***");
+        System.out.println("\tClassic Corvette vs. Sport Corvette");
+        System.out.print("\tWhich car has the least miles?\t");
 
         // *** COMPLETE THE FOLLOWING DECISION STATEMENTS ***
 
-    /*
-        if (_________________________________)
+
+        if (corvetteClassic.compareTo(corvetteSport) < corvetteSport.compareTo(corvetteClassic))
             System.out.println("Classic Corvette has less miles than Sport Corvette");
-        else if (___________________________________)
+        else if (corvetteClassic.compareTo(corvetteSport) > corvetteSport.compareTo(corvetteClassic))
             System.out.println("Sport Corvette has less miles than Classic Corvette");
         else
             System.out.println("Tie, both have " + corvetteClassic.getMiles() + " miles");
-    */
+
 
 
         // Display equality
 
-    /*
+
         System.out.println("\n*** CHECK EQUALITY ***");
         System.out.println("\tBase Trax vs. Luxury Trax");
         System.out.print("\tStatus:\t");
 
         // *** COMPLETE THE FOLLOWING DECISION STATEMENTS ***
-        if  if (_________________________________)
+        if  (corvetteClassic.equals(corvetteSport))
             System.out.println("Same car");
         else
             System.out.println("Not same car");
 
-     */
+
 
     }
 }

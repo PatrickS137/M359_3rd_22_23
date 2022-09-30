@@ -51,7 +51,7 @@ public class Chevy {
     }
 
     //------------------------------------------------
-    public String toString(Chevy other) {
+    public String toString() {
         finalOutput += "***************************************************\n";
         finalOutput += ("\tBASE PRICE:\t\t\t\t\t$" + this.basePrice);
         finalOutput += ("\n\tMILES:\t\t\t\t\t\t$" + this.mileage);
@@ -71,6 +71,8 @@ public class Chevy {
 
         finalOutput += "\n\n";
         //finalOutput += ("PRICE WITH UPGRADES:\t\t$" + )
+        finalOutput += "***************************************************\n";
+
         return (finalOutput);
     }
     //------------------------------------------------
