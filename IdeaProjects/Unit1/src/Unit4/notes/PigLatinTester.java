@@ -5,7 +5,7 @@ public class PigLatinTester {
 
         String phrase1 = "The black cat ate a red apple";
         String phrase2 = "Writing college essays is driving me crazy";
-        String phrase3 = "Everyone loves to code in Java";
+        String phrase3 = "Everyoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooone loves to code in Java";
 
         translatePhrase(phrase1);
         translatePhrase(phrase2);
