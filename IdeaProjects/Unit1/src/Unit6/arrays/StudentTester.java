@@ -46,7 +46,6 @@ public class StudentTester {
         File allSchedule = new File ("studentScheduleData.txt");
         Scanner inStu = new Scanner(allSchedule);
         String maxStudents = inStu.nextLine();
-        int b = 0;
         boolean e = false;
         while (!e) {
             String name = inStu.nextLine();
