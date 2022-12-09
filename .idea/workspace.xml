@@ -35,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ChevyJUnitTestStudent">
+  <component name="RunManager" selected="Application.ChevyDriverStudent">
     <configuration name="ChevyDriverStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Unit2.notes.ChevyDriverStudent" />
       <module name="Unit1" />
@@ -82,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChevyJUnitTestStudent" />
         <item itemvalue="Application.ChevyDriverStudent" />
+        <item itemvalue="JUnit.ChevyJUnitTestStudent" />
         <item itemvalue="JUnit.ChevyJUnitTestStudent.compareToMethodTestThree" />
       </list>
     </recent_temporary>

@@ -78,6 +78,7 @@ public class Chevy {
         finalOutput += ("\tBASE PRICE:\t\t\t\t\t$" + basePrice);
         finalOutput += ("\n\tMILES:\t\t\t\t\t\t" + this.mileage);
         finalOutput += ("\n\tFUEL EFFICIENCY:\t\t\t" + this.fuelEfficiency + "mpg");
+        grandTotal = TAXRATE * (upgradePrice + basePrice);
 
         int test = 0;
         if (luxuryPackage == true) {
