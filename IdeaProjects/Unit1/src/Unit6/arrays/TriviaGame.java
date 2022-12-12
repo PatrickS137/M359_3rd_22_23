@@ -8,45 +8,43 @@ public class TriviaGame {
     //point values are randomized lunch cost(2.5 to 3.25), usd to indonesian dollar(rupiah)
     private int totalPoints;
 
-    Scanner input = new Scanner(System.in);
-    String name = input.nextLine();
+
 
     public TriviaGame() throws FileNotFoundException {
-        fileInput();
+        System.out.println("a");
+        Scanner input = new Scanner(System.in);
+        String name = input.nextLine();
+        fileInput(name);
+        Question b = new Question();
 
+        System.out.println(b);
 
     }
 
-    public void fileInput() throws FileNotFoundException {
-        File allQuestions = new File ("studentScheduleData.txt");
+    public void fileInput(String name) throws FileNotFoundException {
+        File allQuestions = new File ("mcQuestions.txt");
         Scanner inQ = new Scanner(allQuestions);
 
-        boolean e = false;
-        while (!e) {
-            String name = inQ.nextLine();
-            if (name == null) {
-                e = true;
-            } else {
-                Course[] totalCourses = new Course[8];
-                for (int i = 0; i < totalCourses.length; i++) {
-                    String teacherName = inQ.nextLine();
-                    String className = inQ.nextLine(); // reads the entire line until end of line char
-                    String grade = inQ.nextLine();
-                    int period = inQ.nextInt();
+        while (inQ.hasNext()) {
+            Question[] totalQuestions = new Question[20];
+            for (int i = 0; i < totalQuestions.length; i++) {
+                String text = inQ.nextLine();
+                String answerChoices = inQ.nextLine() + "\n" + inQ.nextLine() + "\n" + inQ.nextLine() + "\n" + inQ.nextLine(); // reads the entire line until end of line char
+                String correctAnswer = inQ.nextLine();
+                int pointValue = inQ.nextInt();
 
-                    if (i < 7) {
-                        inQ.nextLine();
-                    }
-                    Course d = new Course(teacherName, className, grade, period);
-                    totalCourses[i] = d;
-                }
-                if (inQ.hasNext()) {
+                if (i < 7) {
                     inQ.nextLine();
                 }
+                Question d = new Question(text, answerChoices, correctAnswer, pointValue);
+                totalQuestions[i] = d;
+            }
+
+            if (inQ.hasNext()) {
+                inQ.nextLine();
+            }
+            Question q = new Question(name, totalQuestions);
             }
         }
-    }
-
-
 }
 

@@ -14,6 +14,13 @@ public class Question {
         this.pointValue = pointValue;
     }
 
+    public Question(String name, Question[] totalQuestions) {
+        System.out.println(name);
+        for (Question a: totalQuestions){
+            System.out.println(a);
+        }
+    }
+
     public String toString(){
         return (question + ")  " + text + "\n" + answerChoices);
     }
