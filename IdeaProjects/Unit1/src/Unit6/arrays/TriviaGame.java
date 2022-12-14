@@ -15,9 +15,6 @@ public class TriviaGame {
         Scanner input = new Scanner(System.in);
         String name = input.nextLine();
         fileInput(name);
-        Question b = new Question();
-
-        System.out.println(b);
 
     }
 

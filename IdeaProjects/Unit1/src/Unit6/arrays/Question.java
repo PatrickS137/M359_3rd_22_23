@@ -6,12 +6,16 @@ public class Question {
     private String correctAnswer;
     private int pointValue;
     private int question;
+    public static String a;
 
     public Question(String text, String answerChoices, String correctAnswer, int pointValue) {
         this.text = text;
         this.answerChoices = answerChoices;
         this.correctAnswer = correctAnswer;
         this.pointValue = pointValue;
+        a+=this.text;
+        a+= this.answerChoices;
+        System.out.println(a);
     }
 
     public Question(String name, Question[] totalQuestions) {
