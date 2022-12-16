@@ -117,7 +117,6 @@ public class ChevyJUnitTestStudent {
     public void calcPriceTestThree() {
         double actual = bluesilverado.getPriceWithUpgrades();
         double expected = 48920.0;
-
         assertEquals(expected, actual, 0.01);
     }
 

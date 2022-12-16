@@ -1,10 +1,16 @@
 package Unit6.arrays;
 
 public class Qeustion {
+
+
     //question counter
+    private int question;
     //file length
+    private int fileLen;
     //numquestions
+    private int numQuestions = fileLen/7;
     //string used numbers
+    private String numsUsed;
 
     //string for correct answer
     //int for question's points
@@ -20,7 +26,6 @@ public class Qeustion {
         //set total question[question counter] to storage array
         //question counter ++
 
-    //setter to set file length
 
     //method toString
         //call a random num in numquestions

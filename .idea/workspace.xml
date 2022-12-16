@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5801939-c318-4631-b97d-9d96af9f621d" name="Changes" comment="" />
+    <list default="true" id="e5801939-c318-4631-b97d-9d96af9f621d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit3/Examples/SchU4TestRevWScode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit2/notes/ChevyDriverStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit2/notes/ChevyDriverStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit2/notes/ChevyJUnitTestStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit2/notes/ChevyJUnitTestStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/Qeustion.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/Qeustion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TirviaDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TirviaDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TirviaGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TirviaGame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +40,20 @@
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ChevyDriverStudent">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC1\Documents\GitHub\M359_3rd_22_23\Unit2.notes" />
+      <recent name="C:\Users\PC1\Documents\GitHub\M359_3rd_22_23\unit2.notes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TirviaDriver">
     <configuration name="ChevyDriverStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Unit2.notes.ChevyDriverStudent" />
       <module name="Unit1" />
@@ -45,6 +63,39 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchU4TestRevWScode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Unit3.Examples.SchU4TestRevWScode" />
+      <module name="Unit1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Unit3.Examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TirviaDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Unit6.arrays.TirviaDriver" />
+      <module name="Unit1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Unit6.arrays.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="Unit1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,27 +115,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChevyJUnitTestStudent.compareToMethodTestThree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Unit1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Unit2.notes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Unit2.notes" />
-      <option name="MAIN_CLASS_NAME" value="Unit2.notes.ChevyJUnitTestStudent" />
-      <option name="METHOD_NAME" value="compareToMethodTestThree" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChevyDriverStudent" />
+        <item itemvalue="Application.TirviaDriver" />
+        <item itemvalue="Application.SchU4TestRevWScode" />
+        <item itemvalue="Application.test" />
         <item itemvalue="JUnit.ChevyJUnitTestStudent" />
-        <item itemvalue="JUnit.ChevyJUnitTestStudent.compareToMethodTestThree" />
+        <item itemvalue="Application.ChevyDriverStudent" />
       </list>
     </recent_temporary>
   </component>

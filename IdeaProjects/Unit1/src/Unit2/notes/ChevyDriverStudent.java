@@ -17,7 +17,7 @@ public class ChevyDriverStudent {
         // Printouts
         System.out.println("*** VEHICLE PRINTOUTS ***");
         System.out.println(traxBase);
-        System.out.println("After giving the base car a luxury pkg, 4WD package, \nand updating" +
+        System.out.println("After giving the base car a luxury pkg, 4WD package, \nand updating " +
                 "miles to 175, its data prints out as:" );
         System.out.println(traxLux);
         // Create two Chevy Corvettes to test compareTo and Equals

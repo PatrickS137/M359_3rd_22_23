@@ -1,7 +1,8 @@
 package Unit6.arrays;
 
 public class TirviaGame {
-    //points variable
+    //static points variable
+    //static sreak var
     //read file
 
     //Method get info from file
@@ -17,7 +18,10 @@ public class TirviaGame {
         //get question points from qeustion
             //if correct
                 //add points to points variable
-            //else sout "bruh"
+                //sout the stuff
+                //streak ++
+            //else sout "you got it wrong the answer is ..."
+                //streak = 0
 
     //method to end game
         //sout points
