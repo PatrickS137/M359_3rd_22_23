@@ -42,7 +42,6 @@ public class StudentTester {
 
 
 
-
         File allSchedule = new File ("studentScheduleData.txt");
         Scanner inStu = new Scanner(allSchedule);
         String maxStudents = inStu.nextLine();

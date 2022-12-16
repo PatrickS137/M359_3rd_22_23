@@ -13,8 +13,8 @@ public class TirviaDriver {
                 //while boolean = false
                     //show question
                     //ask for answer choice(scanner)
-                    //call checkanswer from tirviagame{souts the answer part}
-                    //sout you have + points + answer streak
+                    //call checkanswer from tirviagame{souts the answer part, total points and answer streak}
+
 
                     //"continue? ask yes or no
                     //if yes then boolean = true

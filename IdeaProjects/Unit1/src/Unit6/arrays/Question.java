@@ -6,24 +6,20 @@ public class Question {
     private String correctAnswer;
     private int pointValue;
     private int question;
-    public static String a;
 
     public Question(String text, String answerChoices, String correctAnswer, int pointValue) {
         this.text = text;
         this.answerChoices = answerChoices;
         this.correctAnswer = correctAnswer;
         this.pointValue = pointValue;
-        a+=this.text;
-        a+= this.answerChoices;
-        System.out.println(a);
+
     }
 
-    public Question(String name, Question[] totalQuestions) {
-        System.out.println(name);
-        for (Question a: totalQuestions){
-            System.out.println(a);
-        }
+    public Question(){
+
     }
+
+
 
     public String toString(){
         return (question + ")  " + text + "\n" + answerChoices);
@@ -67,8 +63,5 @@ public class Question {
 
     public void setQuestion(int question) {
         this.question = question;
-    }
-
-    public static class toString {
     }
 }
