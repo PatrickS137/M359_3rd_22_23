@@ -8,6 +8,7 @@ public class TriviaGame {
     //point values are randomized lunch cost(2.5 to 3.25), usd to indonesian dollar(rupiah)
     private int totalPoints;
     private int currentStreak;
+    private int totalCorrect;
 
     private int fileLen = 141;
     private int numQs = fileLen/7;
@@ -47,12 +48,10 @@ public class TriviaGame {
 
     public String getRandomQuestion() {
         int questionNumber = (int) (Math.random() * numQs);
-        if (usedNums.length() == numQs) {
+        if (currentQ == numQs) {
             return ("you got " + totalPoints + "rupi ahhs, and your ending streak is " + currentStreak);
         } else {
             currentQ++;
-            System.out.println(questionNumber);
-            System.out.println(questionArray[1]);
             String question = questionArray[questionNumber].getText();
             question += questionArray[questionNumber].getAnswerChoices();
 
@@ -67,6 +66,7 @@ public class TriviaGame {
     public String checkAnswer(String bruh){
         if (bruh.equals(quQ.getCorrectAnswer())){
             totalPoints += quQ.getPointValue();
+            totalCorrect++;
             return ("Yes, that is correct and you got " + quQ.getPointValue() + " Rupiahhs");
         }
         else{
@@ -128,6 +128,14 @@ public class TriviaGame {
 
     public void setQuestionArray(Question[] questionArray) {
         this.questionArray = questionArray;
+    }
+
+    public int getTotalCorrect() {
+        return totalCorrect;
+    }
+
+    public void setTotalCorrect(int totalCorrect) {
+        this.totalCorrect = totalCorrect;
     }
 }
 

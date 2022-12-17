@@ -25,7 +25,7 @@ public class Question {
         return (question + ")  " + text + "\n" + answerChoices);
     }
 
-    public String getText() {
+    public  String getText() {
         return text;
     }
 
