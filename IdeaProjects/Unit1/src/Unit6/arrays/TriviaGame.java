@@ -8,25 +8,30 @@ public class TriviaGame {
     //point values are randomized lunch cost(2.5 to 3.25), usd to indonesian dollar(rupiah)
     private int totalPoints;
     private int currentStreak;
+    private int topStreak =0;
     private int totalCorrect;
 
-    private int fileLen = 141;
+    private int fileLen = 140;
     private int numQs = fileLen/7;
-    private String usedNums = "";
     private int currentQ = 0;
-    Question quQ = new Question();
+    private int[] usedNums = new int[20];
+    int j = 0;
+
+
+    String correctAnswer;
+    int pointValue;
 
     Question[] questionArray = new Question[numQs];
 
 
-    public TriviaGame() throws FileNotFoundException {
-
-    }
-
+    /**
+     * This method reads the text file mcQuestions, it takes every question and puts it in an array.
+     * it then puts each question array and puts it in the array QuestionArray[]    ``
+     * @throws FileNotFoundException
+     */
     public void fileInput() throws FileNotFoundException {
         File allQuestions = new File("IdeaProjects/mcQuestions.txt");
         Scanner inQ = new Scanner(allQuestions);
-
 
         for (int i = 0; i < numQs; i++) {
             String text = inQ.nextLine();
@@ -44,33 +49,65 @@ public class TriviaGame {
 
     }
 
-
-
+    /**
+     * This method chooses and displays a random question.  it generates a unique
+     * random number in order to call a unique random question
+     * @return Returns the question
+     * @return Returns a message when there are no more unique questions
+     */
     public String getRandomQuestion() {
-        int questionNumber = (int) (Math.random() * numQs);
-        if (currentQ == numQs) {
-            return ("you got " + totalPoints + "rupi ahhs, and your ending streak is " + currentStreak);
-        } else {
-            currentQ++;
-            String question = questionArray[questionNumber].getText();
-            question += questionArray[questionNumber].getAnswerChoices();
+        boolean isNumUnique = false;
+        int questionNumber =0;
+        while (isNumUnique == false){
+            questionNumber = (int) (Math.random() * numQs);
+            isNumUnique = true;
+            for (int i = 0;i<usedNums.length;i++){
+                if (questionNumber == usedNums[i]){
+                    isNumUnique = false;
+                }
+            }
+        }
+        usedNums[j] = questionNumber;
 
-            String correctAnswer = questionArray[questionNumber].getCorrectAnswer();
-            int pointValue = questionArray[questionNumber].getPointValue();
+
+        if (currentQ == numQs) {
+            return ("No more Questions\nyou got " + totalPoints + "rupi ahhs, and your ending streak is " + currentStreak);
+        }
+
+        else {
+            currentQ++;
+            String question = currentQ + ") " + questionArray[questionNumber].getText();
+            question += "\n" + questionArray[questionNumber].getAnswerChoices();
+
+            correctAnswer = questionArray[questionNumber].getCorrectAnswer();
+            pointValue = questionArray[questionNumber].getPointValue();
 
             return question;
         }
 
     }
 
+    /**
+     *
+     * @param bruh The answer choice input by the player
+     * @return a message and the point value gained if the answer is correct
+     * @return a message if the answer is wrong
+     */
     public String checkAnswer(String bruh){
-        if (bruh.equals(quQ.getCorrectAnswer())){
-            totalPoints += quQ.getPointValue();
+        if (bruh.equals(correctAnswer)){
+            totalPoints += pointValue;
             totalCorrect++;
-            return ("Yes, that is correct and you got " + quQ.getPointValue() + " Rupiahhs");
+            currentStreak++;
+
+            if (currentStreak > topStreak){
+                topStreak = currentStreak;
+            }
+            return ("Yes, that is correct and you got " + pointValue + " Rupiahhs");
         }
         else{
+            currentStreak=0;
             return "disappointmenr";
+
         }
     }
 
@@ -106,14 +143,6 @@ public class TriviaGame {
         this.numQs = numQs;
     }
 
-    public String getUsedNums() {
-        return usedNums;
-    }
-
-    public void setUsedNums(String usedNums) {
-        this.usedNums = usedNums;
-    }
-
     public int getCurrentQ() {
         return currentQ;
     }
@@ -136,6 +165,14 @@ public class TriviaGame {
 
     public void setTotalCorrect(int totalCorrect) {
         this.totalCorrect = totalCorrect;
+    }
+
+    public int getTopStreak() {
+        return topStreak;
+    }
+
+    public void setTopStreak(int topStreak) {
+        this.topStreak = topStreak;
     }
 }
 

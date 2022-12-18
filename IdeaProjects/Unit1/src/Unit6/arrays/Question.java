@@ -7,6 +7,12 @@ public class Question {
     private int pointValue;
     private int question;
 
+    /**
+     * @param text
+     * @param answerChoices
+     * @param correctAnswer
+     * @param pointValue
+     */
     public Question(String text, String answerChoices, String correctAnswer, int pointValue) {
         this.text = text;
         this.answerChoices = answerChoices;
@@ -14,11 +20,6 @@ public class Question {
         this.pointValue = pointValue;
 
     }
-
-    public Question(){
-
-    }
-
 
 
     public String toString(){
