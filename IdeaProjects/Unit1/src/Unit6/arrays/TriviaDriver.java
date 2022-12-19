@@ -48,6 +48,7 @@ public class TriviaDriver {
             System.out.println(tG.checkAnswer(answer));
 
             System.out.println("--------------------------------------------------");
+
             System.out.println("Current streak: " + tG.getCurrentStreak());
             System.out.println("Total points: " + tG.getTotalPoints());
             System.out.println("Total # correct: " + tG.getTotalCorrect()+" questions");
