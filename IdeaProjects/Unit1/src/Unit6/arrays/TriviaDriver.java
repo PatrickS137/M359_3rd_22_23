@@ -17,7 +17,7 @@ public class TriviaDriver {
         TriviaGame tG = new TriviaGame();
 
 
-
+        
         tG.fileInput();
         System.out.println("Welcome to this quiz thing, give me your name");
         String name = myObj.nextLine();

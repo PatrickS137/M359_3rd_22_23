@@ -1,5 +1,6 @@
 package Unit6.arrays;
 
+import javax.swing.plaf.basic.BasicTreeUI;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,20 +9,27 @@ public class TriviaGame {
     //point values are randomized lunch cost(2.5 to 3.25), usd to indonesian dollar(rupiah)
     private int totalPoints;
     private int currentStreak;
-    private int topStreak =0;
+    private int topStreak;
     private int totalCorrect;
 
-    private int fileLen = 140;
-    private int numQs = fileLen/7;
-    private int currentQ = 0;
+    private int fileLen;
+    private int numQs;
+    private int currentQ;
     private int[] usedNums = new int[20];
     int j = 0;
-
-
     String correctAnswer;
     int pointValue;
+    Question[] questionArray;
 
-    Question[] questionArray = new Question[numQs];
+    public TriviaGame(){
+        topStreak =0;
+        fileLen = 140;
+        numQs = fileLen/7;
+        currentQ = 0;
+        j = 0;
+        questionArray = new Question[numQs];
+
+    }
 
 
     /**
@@ -106,6 +114,7 @@ public class TriviaGame {
         }
         else{
             currentStreak=0;
+            System.out.println("answer: " +  correctAnswer);
             return "disappointmenr";
 
         }
