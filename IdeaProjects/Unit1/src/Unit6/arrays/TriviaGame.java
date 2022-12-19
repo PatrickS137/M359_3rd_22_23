@@ -30,7 +30,7 @@ public class TriviaGame {
      * @throws FileNotFoundException
      */
     public void fileInput() throws FileNotFoundException {
-        File allQuestions = new File("IdeaProjects/mcQuestions.txt");
+        File allQuestions = new File("mcQuestions.txt");
         Scanner inQ = new Scanner(allQuestions);
 
         for (int i = 0; i < numQs; i++) {
