@@ -8,6 +8,7 @@ public class Question {
     private int question;
 
     /**
+     * Saves all of the variables
      * @param text
      * @param answerChoices
      * @param correctAnswer
