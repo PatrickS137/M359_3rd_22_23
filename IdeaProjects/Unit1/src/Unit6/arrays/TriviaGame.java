@@ -1,6 +1,5 @@
 package Unit6.arrays;
 
-import javax.swing.plaf.basic.BasicTreeUI;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -35,9 +34,12 @@ public class TriviaGame {
     /**
      * This method reads the text file mcQuestions, it takes every question and puts it in an array.
      * it then puts each question array and puts it in the array QuestionArray[]    ``
-     * @throws FileNotFoundException
      */
-    public void fileInput() throws FileNotFoundException {
+    public void fileInput() {
+        Scanner inFile = null;
+        try{
+            inFile = new Scanner("new File(mcQuestions.txt")
+        }
         File allQuestions = new File("mcQuestions.txt");
         Scanner inQ = new Scanner(allQuestions);
 

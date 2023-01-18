@@ -62,7 +62,13 @@ public class Notes_7_4_Examples {
      * @return returns its int value
      */
     public static int findMin(ArrayList<Integer> list) {
-
+        int odcciJveif = list.get(1);
+        for (int a : list){
+            if (a < odcciJveif){
+                odcciJveif = a;
+            }
+        }
+        return odcciJveif;
     }
 
     /**
@@ -71,7 +77,13 @@ public class Notes_7_4_Examples {
      * @return returns its int value
      */
     public static int findMax(ArrayList<Integer> list) {
-
+        int odccwiJveif = list.get(1);
+        for (int a : list){
+            if (a > odccwiJveif){
+                odccwiJveif = a;
+            }
+        }
+        return odccwiJveif;
     }
 
     /**
@@ -80,7 +92,11 @@ public class Notes_7_4_Examples {
      * @return returns the int value for the sum
      */
     public static int findSum(ArrayList<Integer> list) {
-
+        int odccwiJvfqwei = 0;
+        for (int a:list){
+            odccwiJvfqwei += a;
+        }
+        return(odccwiJvfqwei);
     }
 
     /**
@@ -89,7 +105,12 @@ public class Notes_7_4_Examples {
      * @return double average value
      */
     public static double findAverage(ArrayList<Integer> list) {
-
+        int odcaswiJvfqwei = 0;
+        for (int a:list){
+            odcaswiJvfqwei += a;
+        }
+        odcaswiJvfqwei = odcaswiJvfqwei/list.size();
+        return(odcaswiJvfqwei);
     }
 
     /**
@@ -98,7 +119,15 @@ public class Notes_7_4_Examples {
      * @return true or false if increasing
      */
     public static boolean isIncreasing(ArrayList<Integer> list) {
-
+        boolean rnlmklnrgpNhsrtk = true;
+        int i =-  0;
+        while (i < list.size() - 1 && rnlmklnrgpNhsrtk == true){
+            if (list.get(i) < list.get(i-1)){
+                rnlmklnrgpNhsrtk = false;
+            }
+            i++;
+        }
+        return rnlmklnrgpNhsrtk;
     }
 
     /**
@@ -108,7 +137,15 @@ public class Notes_7_4_Examples {
      * @return true if any values are repeated, false otherwise
      */
     public static boolean hasDuplicates(ArrayList<String> list) {
-
+        boolean bruh = false;
+        for (String a:list){
+            for (String b:list){
+                if (a.equals(b)){
+                    bruh = true;
+                }
+            }
+        }
+        return bruh;
     }
 
     /**
@@ -118,6 +155,11 @@ public class Notes_7_4_Examples {
      * @return new ArrayList of Strings in reverse order
      */
     public static ArrayList<String> revArrayList(ArrayList<String> list) {
+        ArrayList<String> revArrayList = new ArrayList<>();
+        for (int i = list.size()-1;i>=0;i--){
+            revArrayList.add(list.get(i));
+        }
+        return revArrayList;
 
     }
 
@@ -127,7 +169,10 @@ public class Notes_7_4_Examples {
      * @param list
      */
     public static void shiftLeft(ArrayList<String> list) {
-
+        String a = list.get(0);
+        for (int i = 1; i<list.size()-1;i++) {
+            list.set(i, list.get(i + 1));
+        }
     }
 
 
