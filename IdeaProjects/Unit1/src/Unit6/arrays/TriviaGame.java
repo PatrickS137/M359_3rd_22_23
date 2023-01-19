@@ -35,12 +35,9 @@ public class TriviaGame {
      * This method reads the text file mcQuestions, it takes every question and puts it in an array.
      * it then puts each question array and puts it in the array QuestionArray[]    ``
      */
-    public void fileInput() {
+    public void fileInput() throws FileNotFoundException {
         Scanner inFile = null;
-        try{
-            inFile = new Scanner("new File(mcQuestions.txt")
-        }
-        File allQuestions = new File("mcQuestions.txt");
+        File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\mcQuestions.txt");
         Scanner inQ = new Scanner(allQuestions);
 
         for (int i = 0; i < numQs; i++) {
@@ -66,11 +63,11 @@ public class TriviaGame {
      * @return Returns a message when there are no more unique questions
      */
     public String getRandomQuestion() {
-        boolean isNumUnique = false;
-        int questionNumber =0;
-        while (isNumUnique == false){
-            questionNumber = (int) (Math.random() * numQs);
-            isNumUnique = true;
+                boolean isNumUnique = false;
+                int questionNumber =0;
+                while (isNumUnique == false){
+                    questionNumber = (int) (Math.random() * numQs);
+                    isNumUnique = true;
             for (int i = 0;i<usedNums.length;i++){
                 if (questionNumber == usedNums[i]){
                     isNumUnique = false;
