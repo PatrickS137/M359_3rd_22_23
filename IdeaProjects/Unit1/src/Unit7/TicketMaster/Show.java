@@ -17,6 +17,12 @@ public class Show {
         this.city = city;
     }
 
+
+
+    public String toString(){
+        return(getDate());
+    }
+
     //-------------------------------------------------------------------------
 
     public String getDate() {

@@ -1,8 +1,5 @@
 package Unit7.TicketMaster;
 
-import Unit6.arrays.Question;
-import Unit7.TryCatchEx;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,17 +8,25 @@ import java.util.Scanner;
 public class
 
 TicketMaster {
+
     private int lineCount;
     Scanner inFile = null;
-    File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+
+    public static void fileInput() {
+        ArrayList<Show> allTickets = new ArrayList<>();
 
 
-    ArrayList<Show> allTickets = new ArrayList<>();
-
-    public ArrayList<Show> fileInput() throws FileNotFoundException {
-        Scanner myTick = new Scanner(allQuestions);
+        Scanner myTick = null;
+        try {
+            myTick = new Scanner(allQuestions);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         boolean isGoNext = true;
+        int i = 0;
         while(isGoNext) {
             String date = "";
 
@@ -32,6 +37,7 @@ TicketMaster {
             }
 
             String price = myTick.next();
+
             String qty = myTick.next();
             String performer = myTick.next();
             if (performer.substring(performer.length() - 1) != ",") {
@@ -43,16 +49,16 @@ TicketMaster {
             try {
                 city = city.substring(1);
             }
-            catch (Exception e){
+            catch (Exception ignored){
 
             }
 
             Show oneTicket = new Show(date, price, qty, performer, city);
-            allTickets.add(oneTicket);
-            System.out.println(oneTicket[1]);
 
+            allTickets.add(oneTicket);
+            System.out.println(allTickets);
+            System.out.println(oneTicket.toString());
         }
-        return(allTickets);
     }
 
 
