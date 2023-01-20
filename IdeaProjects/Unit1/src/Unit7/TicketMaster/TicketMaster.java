@@ -5,16 +5,14 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class
-
-TicketMaster {
+public class TicketMaster {
 
     private int lineCount;
     Scanner inFile = null;
-    //File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
 
-    public static void fileInput() {
+    public ArrayList<Show> fileInput() {
         ArrayList<Show> allTickets = new ArrayList<>();
 
 
@@ -40,11 +38,10 @@ TicketMaster {
 
             String qty = myTick.next();
             String performer = myTick.next();
-            if (performer.substring(performer.length() - 1) != ",") {
-
+            while (!performer.substring(performer.length() - 1).equals(",")) {
                 performer += " " + myTick.next();
-                performer = performer.substring(0, performer.length() - 1);
             }
+            performer = performer.substring(0, performer.length() - 1);
             String city = myTick.nextLine();
             try {
                 city = city.substring(1);
@@ -56,11 +53,33 @@ TicketMaster {
             Show oneTicket = new Show(date, price, qty, performer, city);
 
             allTickets.add(oneTicket);
-            System.out.println(allTickets);
-            System.out.println(oneTicket.toString());
+
         }
+        return(allTickets);
     }
 
 
+    public int getLineCount() {
+        return lineCount;
+    }
 
+    public void setLineCount(int lineCount) {
+        this.lineCount = lineCount;
+    }
+
+    public Scanner getInFile() {
+        return inFile;
+    }
+
+    public void setInFile(Scanner inFile) {
+        this.inFile = inFile;
+    }
+
+    public static File getAllQuestions() {
+        return allQuestions;
+    }
+
+    public static void setAllQuestions(File allQuestions) {
+        TicketMaster.allQuestions = allQuestions;
+    }
 }

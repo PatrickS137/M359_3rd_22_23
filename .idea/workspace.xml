@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e5801939-c318-4631-b97d-9d96af9f621d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TriviaGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit6/arrays/TriviaGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/Show.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/TicketMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/TicketMaster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/TicketMasterDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/TicketMasterDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/showData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects/Unit1/src/Unit7/TicketMaster/showData.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
