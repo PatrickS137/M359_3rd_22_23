@@ -8,14 +8,27 @@ import java.util.Scanner;
 public class TicketMaster {
 
     private int lineCount;
+    private ArrayList<Show> allTickets;
+
+    public TicketMaster() {
+        allTickets= new ArrayList<>();
+    }
+
+
     Scanner inFile = null;
-    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-
-    public ArrayList<Show> fileInput() {
-        ArrayList<Show> allTickets = new ArrayList<>();
-
-
+    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    public String toString(){
+        String output2 = "";
+        output2 += "Date\t\tPrice\t\tQty\t\tArtist\t\t\t\t\tCity";
+        output2 += ("\n____________________________________________________________________\n");
+        for (int i = 0;i< allTickets.size();i++){
+            output2 += allTickets.get(i).toString();
+            output2 += "\n";
+        }
+        return output2;
+    }
+    public void fileInput() {
         Scanner myTick = null;
         try {
             myTick = new Scanner(allQuestions);
@@ -55,7 +68,7 @@ public class TicketMaster {
             allTickets.add(oneTicket);
 
         }
-        return(allTickets);
+
     }
 
 

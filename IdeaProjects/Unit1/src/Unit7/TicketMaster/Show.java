@@ -1,8 +1,5 @@
 package Unit7.TicketMaster;
 
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
-import java.util.ArrayList;
-
 public class Show {
 
 
@@ -12,10 +9,7 @@ public class Show {
     private String performer;
     private String city;
 
-    public static void main(String[] args) {
-        TicketMaster tG = new TicketMaster();
-        ArrayList<Show> allTicketArray = tG.fileInput();
-    }
+
 
 
 
@@ -30,6 +24,7 @@ public class Show {
 
 
     public String toString(){
+
         String output = "";
         output += date;
         output += "\t" + price;
