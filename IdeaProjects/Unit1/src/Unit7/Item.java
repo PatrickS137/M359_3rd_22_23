@@ -16,7 +16,7 @@ public class Item {
      *  The quantity doesn't matter
      */
     public boolean equals(Item other) {
-
+        return false;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Item {
      * Where 10 represents the quantity
      */
     public String toString() {
-
+        return "a";
     }
 
 

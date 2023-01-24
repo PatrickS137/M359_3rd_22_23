@@ -25,7 +25,7 @@ public class Store {
      */
 
     public boolean updateStock(Item newItem) {
-
+        return false;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Store {
      */
 
     public String toString() {
-
+        return "";
 
     }
 
