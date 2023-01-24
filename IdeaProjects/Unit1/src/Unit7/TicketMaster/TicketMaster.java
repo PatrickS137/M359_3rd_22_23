@@ -9,6 +9,9 @@ public class TicketMaster {
 
     private int lineCount;
     private ArrayList<Show> allTickets;
+    Scanner myTick = null;
+    Scanner myObj = new Scanner(System.in);
+
 
     public TicketMaster() {
         allTickets= new ArrayList<>();
@@ -16,8 +19,8 @@ public class TicketMaster {
 
 
     Scanner inFile = null;
-    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
     public String toString(){
         String output2 = "";
         output2 += "Date\t\tPrice\t\tQty\t\tArtist\t\t\t\t\tCity";
@@ -29,7 +32,6 @@ public class TicketMaster {
         return output2;
     }
     public void fileInput() {
-        Scanner myTick = null;
         try {
             myTick = new Scanner(allQuestions);
         } catch (FileNotFoundException e) {
@@ -70,6 +72,52 @@ public class TicketMaster {
         }
 
     }
+
+    //-------------------------------------------------------------
+    public String showInstruction(){
+        return("-------------------------------------------------------------\nType 1 to sort A-Z\nType 2 to sort Z-A\nType 3 to sort by ticket price low-high\nType 4 to sort " +
+                "by ticket price high-low\nType 5 to search by city\nType 6 to quit\n-------------------------------------------------------------");
+    }
+    public String searchByCity() {
+        System.out.println("Enter the name of the city you want to search");
+
+        String searchResult = "";
+        boolean isNext = true;
+        while (isNext) {
+            String searchInput = myObj.nextLine().toLowerCase();
+
+            for (int i = 0; i < allTickets.size(); i++) {
+                if (searchInput.equals(allTickets.get(i).getCity().toLowerCase())) {
+                    searchResult += "-------------------------------------------------------------\n";
+                    searchResult += allTickets.get(i).toString();
+                    searchResult += "\n-------------------------------------------------------------";
+
+                    return searchResult;
+                }
+            }
+
+            System.out.println("that is not a valid city, type 7 to quit, or 8 to search another city");
+            try {
+                int choice = myObj.nextInt();
+                if (choice == 7) {
+                    searchResult = "exiting...";
+                    isNext = false;
+                } else if (choice == 8) {
+                    System.out.println("Enter the name of the city you want to search");
+                    searchInput = myObj.nextLine().toLowerCase();
+                } else {
+                    searchResult = "enter 7 or 8";
+                }
+            } catch (Exception e) {
+                searchResult = "that is not a valid input";
+            }
+
+        //searchResult += allTickets.get(i).toString();
+        //searchResult += "\n";
+        }
+        return searchResult;
+    }
+    //-------------------------------------------------------------
 
 
     public int getLineCount() {

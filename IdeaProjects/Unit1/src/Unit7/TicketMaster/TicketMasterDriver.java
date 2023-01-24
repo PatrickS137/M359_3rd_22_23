@@ -1,6 +1,5 @@
 package Unit7.TicketMaster;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TicketMasterDriver {
@@ -13,13 +12,23 @@ public class TicketMasterDriver {
 
         boolean flag = true;
         int num = 1;
+        System.out.println("type 0 to show instructions again");
+        System.out.println(tG.showInstruction());
         while (flag) {
             int choice;
-            System.out.println("-------------------------------------------------------------\nType 1 to sort A-Z\nType 2 to sort Z-A\nType 3 to sort by ticket price low-high\nType 4 to sort by ticket price high-low\nType 5 to search by city\nType 6 to quit\n-------------------------------------------------------------");
 
+
+            System.out.println("Enter number here...");
             try{
                 choice = myObj.nextInt();
-                if (choice == 1){
+                if (choice <0|| choice >6){
+                    System.out.println("Please type an integer 1-6 (or 0 to show instructions)");
+                    myObj.nextLine();
+                }
+                else if (choice == 0){
+                    System.out.println(tG.showInstruction());
+                }
+                else if (choice == 1){
                     System.out.println("sort A-Z");
                 }
                 else if (choice == 2){
@@ -32,7 +41,7 @@ public class TicketMasterDriver {
                     System.out.println("sort high-low");
                 }
                 else if (choice == 5){
-                    System.out.println("sort city");
+                    System.out.println(tG.searchByCity());
                 }
                 else if (choice == 6){
                     System.out.println("Quit program");
@@ -40,7 +49,8 @@ public class TicketMasterDriver {
                 }
             }
             catch (Exception e){
-                System.out.println("Please type an integer 1-6");
+
+                System.out.println("Please type an integer 1-6 (or 0 to show instructions)");
                 myObj.nextLine();
             }
         }
