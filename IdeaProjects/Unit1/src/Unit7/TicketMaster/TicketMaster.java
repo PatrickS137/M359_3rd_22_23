@@ -19,8 +19,8 @@ public class TicketMaster {
 
 
     Scanner inFile = null;
-    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
     public String toString(){
         String output2 = "";
         output2 += "Date\t\tPrice\t\tQty\t\tArtist\t\t\t\t\tCity";
@@ -88,12 +88,15 @@ public class TicketMaster {
 
             for (int i = 0; i < allTickets.size(); i++) {
                 if (searchInput.equals(allTickets.get(i).getCity().toLowerCase())) {
-                    searchResult += "-------------------------------------------------------------\n";
-                    searchResult += allTickets.get(i).toString();
-                    searchResult += "\n-------------------------------------------------------------";
+                    searchResult +="\n" + allTickets.get(i).toString();
 
-                    return searchResult;
+
                 }
+            }
+            if (!searchResult.equals("")){
+                searchResult = "-------------------------------------------------------------" + searchResult;
+                searchResult += "\n-------------------------------------------------------------";
+                return searchResult;
             }
 
             System.out.println("that is not a valid city, type 7 to quit, or 8 to search another city");
