@@ -12,15 +12,13 @@ public class TicketMaster {
     Scanner myTick = null;
     Scanner myObj = new Scanner(System.in);
 
-
     public TicketMaster() {
         allTickets= new ArrayList<>();
     }
-
-
-    Scanner inFile = null;
-    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+        Scanner inFile = null;
+    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public String toString(){
         String output2 = "";
         output2 += "Date\t\tPrice\t\tQty\t\tArtist\t\t\t\t\tCity";
@@ -31,6 +29,7 @@ public class TicketMaster {
         }
         return output2;
     }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public void fileInput() {
         try {
             myTick = new Scanner(allQuestions);
@@ -72,8 +71,38 @@ public class TicketMaster {
         }
 
     }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void sortPrice(Boolean highToLow){
 
-    //-------------------------------------------------------------
+    }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    public void sortAZ(Boolean aToZ){
+        for (int i = 0; i < allTickets.size()-1; i++) {
+            int firstArtist = i;
+
+            for (int j = i+1;j<allTickets.size();j++){
+                if (aToZ) {
+                    if (allTickets.get(firstArtist).getPerformer().compareTo(allTickets.get(j).getPerformer()) > 0) {
+                        firstArtist = j;
+
+                    }
+                }
+                else{
+                    if (allTickets.get(firstArtist).getPerformer().compareTo(allTickets.get(j).getPerformer()) < 0) {
+                    firstArtist = j;
+                    }
+                }
+            }
+            Show temp = allTickets.get(firstArtist);
+            allTickets.set(firstArtist, allTickets.get(i));
+            allTickets.set(i,temp);
+
+        }
+    }
+
+
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     public String showInstruction(){
         return("-------------------------------------------------------------\nType 1 to sort A-Z\nType 2 to sort Z-A\nType 3 to sort by ticket price low-high\nType 4 to sort " +
                 "by ticket price high-low\nType 5 to search by city\nType 6 to quit\n-------------------------------------------------------------");
@@ -94,7 +123,7 @@ public class TicketMaster {
                 }
             }
             if (!searchResult.equals("")){
-                searchResult = "-------------------------------------------------------------" + searchResult;
+                searchResult = "Date\t\tPrice\t\tQty\t\tArtist\t\t\t\t\tCity\n-------------------------------------------------------------" + searchResult;
                 searchResult += "\n-------------------------------------------------------------";
                 return searchResult;
             }
@@ -120,9 +149,7 @@ public class TicketMaster {
         }
         return searchResult;
     }
-    //-------------------------------------------------------------
-
-
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public int getLineCount() {
         return lineCount;
     }

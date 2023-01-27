@@ -29,17 +29,24 @@ public class TicketMasterDriver {
                     System.out.println(tG.showInstruction());
                 }
                 else if (choice == 1){
-                    System.out.println("sort A-Z");
+                    System.out.println("Sorting from A-Z...");
+                    tG.sortAZ(true);
+                    System.out.println(tG.toString());
                 }
                 else if (choice == 2){
-                    System.out.println("sort Z-A");
+                    System.out.println("Sorting from A-Z...");
+                    tG.sortAZ(false);
+                    System.out.println(tG.toString());
                 }
                 else if (choice == 3){
-                    System.out.println("sort low-high");
+                    System.out.println("Sorting from Low to High...");
+                    tG.sortPrice(true);
+                    System.out.println(tG.toString());
                 }
                 else if (choice == 4){
-                    System.out.println("sort high-low");
-                }
+                    System.out.println("Sorting from High To Low...");
+                    tG.sortPrice(false);
+                    System.out.println(tG.toString());                }
                 else if (choice == 5){
                     System.out.println(tG.searchByCity());
                 }
