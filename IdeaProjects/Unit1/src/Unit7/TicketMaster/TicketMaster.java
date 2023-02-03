@@ -48,7 +48,7 @@ public class TicketMaster {
                break;
             }
 
-            String price = myTick.next();
+            double price = myTick.nextDouble();
 
             String qty = myTick.next();
             String performer = myTick.next();
@@ -72,8 +72,27 @@ public class TicketMaster {
 
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    public void sortPrice(Boolean highToLow){
 
+    public void sortPrice(Boolean highToLow){
+        //insertion sort
+        for (int i = 1; i<allTickets.size();i++){
+            double valueToInsert = allTickets.get(i).getPrice();
+            int position = i;
+            while (position >0 && allTickets.get(position - 1).getPrice() < valueToInsert){
+                //shift value at position -1 over to position
+                allTickets.set(position, allTickets.get(position -1 ));
+                //decrease position so I can continue checking values
+                position--;
+            }
+
+            //at this point i have either checked all values and I belong at
+            //position 0(so first check of while loop failed) OR I am larger than
+            //next element, so I found where I belong, at position
+
+            //now, you se the value at index position with the value we saved in
+            //valueToInsert
+            allTickets.set(position, allTickets.get(i));
+        }
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public void sortAZ(Boolean aToZ){

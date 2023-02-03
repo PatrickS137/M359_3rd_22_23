@@ -4,7 +4,7 @@ public class Show {
 
 
     private String date;
-    private String price;
+    private double price;
     private String qty;
     private String performer;
     private String city;
@@ -13,7 +13,7 @@ public class Show {
 
 
 
-    public Show(String date, String price, String qty, String performer, String city) {
+    public Show(String date, double price, String qty, String performer, String city) {
         this.date = date;
         this.price = price;
         this.qty = qty;
@@ -60,11 +60,11 @@ public class Show {
         this.date = date;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

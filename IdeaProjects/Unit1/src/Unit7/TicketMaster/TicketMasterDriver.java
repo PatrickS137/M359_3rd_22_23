@@ -46,7 +46,8 @@ public class TicketMasterDriver {
                 else if (choice == 4){
                     System.out.println("Sorting from High To Low...");
                     tG.sortPrice(false);
-                    System.out.println(tG.toString());                }
+                    System.out.println(tG.toString());
+                }
                 else if (choice == 5){
                     System.out.println(tG.searchByCity());
                 }
