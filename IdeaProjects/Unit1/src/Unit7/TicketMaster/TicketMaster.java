@@ -77,13 +77,25 @@ public class TicketMaster {
         //insertion sort
         for (int i = 1; i<allTickets.size();i++){
             double valueToInsert = allTickets.get(i).getPrice();
+            Show lineToSave = allTickets.get(i);
             int position = i;
-            while (position >0 && allTickets.get(position - 1).getPrice() < valueToInsert){
-                //shift value at position -1 over to position
-                allTickets.set(position, allTickets.get(position -1 ));
-                //decrease position so I can continue checking values
-                position--;
+            if (highToLow){
+                while (position >0 && allTickets.get(position - 1).getPrice() > valueToInsert){
+                    //shift value at position -1 over to position
+                    allTickets.set(position, allTickets.get(position-1));
+                    //decrease position so I can continue checking values
+                    position--;
+                }
             }
+            else{
+                while (position >0 && allTickets.get(position - 1).getPrice() < valueToInsert){
+                    //shift value at position -1 over to position
+                    allTickets.set(position, allTickets.get(position-1));
+                    //decrease position so I can continue checking values
+                    position--;
+                }
+            }
+
 
             //at this point i have either checked all values and I belong at
             //position 0(so first check of while loop failed) OR I am larger than
@@ -91,7 +103,7 @@ public class TicketMaster {
 
             //now, you se the value at index position with the value we saved in
             //valueToInsert
-            allTickets.set(position, allTickets.get(i));
+            allTickets.set(position, lineToSave);
         }
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

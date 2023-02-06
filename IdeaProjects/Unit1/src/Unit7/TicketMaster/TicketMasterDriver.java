@@ -52,7 +52,7 @@ public class TicketMasterDriver {
                     System.out.println(tG.searchByCity());
                 }
                 else if (choice == 6){
-                    System.out.println("Quit program");
+                    System.out.println("getting toaster ready...");
                     flag = false;
                 }
             }
