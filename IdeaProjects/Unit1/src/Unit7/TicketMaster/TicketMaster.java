@@ -16,8 +16,13 @@ public class TicketMaster {
         allTickets= new ArrayList<>();
     }
         Scanner inFile = null;
-    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    /**
+     * this function prints out all the data in the showData file formatted
+     * @return output2
+     */
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public String toString(){
         String output2 = "";
@@ -29,6 +34,10 @@ public class TicketMaster {
         }
         return output2;
     }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    /**
+     * This function collects the data from showData, and saves it in allTickets
+     */
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     public void fileInput() {
         try {
@@ -72,7 +81,11 @@ public class TicketMaster {
 
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * This function sorts the data from showData by high to low if highToLow = true,
+     * or low to high if highToLow = false
+     * @param highToLow
+     */
     public void sortPrice(Boolean highToLow){
         //insertion sort
         for (int i = 1; i<allTickets.size();i++){
@@ -107,6 +120,11 @@ public class TicketMaster {
         }
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    /**
+     * This function sorts the data from showData by z to a if aToZ = true,
+     * or a to z if aToZ = false
+     * @param aToZ
+     */
     public void sortAZ(Boolean aToZ){
         for (int i = 0; i < allTickets.size()-1; i++) {
             int firstArtist = i;
@@ -133,11 +151,21 @@ public class TicketMaster {
 
 
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    /**
+     * this function prints out the instructions
+     * @return
+     */
     public String showInstruction(){
         return("-------------------------------------------------------------\nType 1 to sort A-Z\nType 2 to sort Z-A\nType 3 to sort by ticket price low-high\nType 4 to sort " +
                 "by ticket price high-low\nType 5 to search by city\nType 6 to quit\n-------------------------------------------------------------");
     }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * This function takes the user input of the city the user wants to search. If the city input is not in the data,
+     * it prompts for another input or quit.  If the city input is valid, then it prints all corresponding lines.
+     * @return
+     */
     public String searchByCity() {
         System.out.println("Enter the name of the city you want to search");
 

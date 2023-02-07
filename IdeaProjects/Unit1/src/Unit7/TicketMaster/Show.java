@@ -9,10 +9,14 @@ public class Show {
     private String performer;
     private String city;
 
-
-
-
-
+    /**
+     * This function takes all the variables used to input the data and saves it
+     * @param date
+     * @param price
+     * @param qty
+     * @param performer
+     * @param city
+     */
     public Show(String date, double price, String qty, String performer, String city) {
         this.date = date;
         this.price = price;
@@ -22,7 +26,10 @@ public class Show {
     }
 
 
-
+    /**
+     * This function uses the previously collected information to return 1 line of data
+     * @return output
+     */
     public String toString(){
 
         String output = "";
