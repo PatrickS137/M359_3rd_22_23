@@ -10,14 +10,13 @@ public class TicketMaster {
     private int lineCount;
     private ArrayList<Show> allTickets;
     Scanner myTick = null;
-    Scanner myObj = new Scanner(System.in);
 
     public TicketMaster() {
         allTickets= new ArrayList<>();
     }
         Scanner inFile = null;
-    static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
-    //static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    //static File allQuestions = new File("C:\\Users\\PC1\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
+    static File allQuestions = new File("C:\\Users\\sze1621\\Documents\\GitHub\\M359_3rd_22_23\\IdeaProjects\\Unit1\\src\\Unit7\\TicketMaster\\showData.txt");
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     /**
      * this function prints out all the data in the showData file formatted
@@ -78,7 +77,7 @@ public class TicketMaster {
             allTickets.add(oneTicket);
 
         }
-
+        myTick.close();
     }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     /**
@@ -167,6 +166,8 @@ public class TicketMaster {
      * @return
      */
     public String searchByCity() {
+        Scanner myObj = new Scanner(System.in);
+
         System.out.println("Enter the name of the city you want to search");
 
         String searchResult = "";
