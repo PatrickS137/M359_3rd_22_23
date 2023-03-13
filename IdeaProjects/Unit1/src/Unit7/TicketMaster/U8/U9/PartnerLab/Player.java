@@ -5,18 +5,20 @@ public class Player {
     private String team;
     private int speed;
     private int strength;
+    private int points;
     //name
 
-    public Player(String name, String team, int speed, int strength) {
+    public Player(String name, String team, int speed, int strength, int points) {
         this.name = name;
         this.team = team;
         this.speed = speed;
         this.strength = strength;
+        this.points = points;
     }
 
 
     //stats
-    public String displayStats(){
+    public String toString(){
         String output = "";
         output += "stats for "+ getName();
         output += "--------------------------------";
@@ -55,5 +57,9 @@ public class Player {
 
     public void setStrength(int strength) {
         this.strength = strength;
+    }
+
+    public int getPoints() {
+        return points;
     }
 }

@@ -10,14 +10,14 @@ public class Defense_Guy extends Player{
     private int steals;
     private int rebounds;
     public Defense_Guy(String name, String team, int speed, int strength, int b){
-        super(name, team, speed, strength);
+        super(name, team, speed, strength, 0);
         blockChance = b;
         rebounds = 0;
         steals = 0;
     }
     public void steal(){
-        int stealChance = (int)Math.random() * 100;
-        int keepChance = (int)Math.random() * 100;
+        int stealChance = (int)(Math.random() * 100);
+        int keepChance = (int)(Math.random() * 100);
         if(stealChance>keepChance){
             steals ++;
             System.out.println("The defender steals the ball!");
@@ -27,7 +27,7 @@ public class Defense_Guy extends Player{
         }
     }
     public void blocks(Player pl){
-        int random = (int)Math.random() * 100;
+        int random = (int)(Math.random() * 100);
         if(pl instanceof Mid_Player){
             if(((Mid_Player)pl).getMidRange() > blockChance && random > 70){
                 System.out.println("Blocked");
@@ -36,9 +36,9 @@ public class Defense_Guy extends Player{
             }
         }
     }
-
-    public String displayStats() {
-        String output = super.displayStats();
+    @Override
+    public String toString() {
+        String output = super.toString();
         output += "Blocks: " + blocks;
         output += "Steals: " + steals;
         output += "Rebounds: " + rebounds;

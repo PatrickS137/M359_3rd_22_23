@@ -7,12 +7,10 @@ public class Mid_Player extends Player{
     private int midRange;
     private int midRangeScored;
     private int layup;
-    private int handles;
-    public Mid_Player(String name, String team, int speed, int strength, int m, int l, int h){
-        super(name, team, speed, strength);
+    public Mid_Player(String name, String team, int speed, int strength, int m, int l){
+        super(name, team, speed, strength, 0);
         midRange = m;
         layup = l;
-        handles = h;
     }
     public void midRange(){
         int shotPt = (((int)(Math.random() * 100))/100) * midRange;
@@ -30,11 +28,11 @@ public class Mid_Player extends Player{
         }
     }
 
-    public String displayStats(){
-        String output = super.displayStats();
+    public String toString(){
+        String output = super.toString();
         output += "Mid Range %: " + midRange;
         output += "Layup %: " + layup;
-        output += "This player has scored " + midRangeScored +" three pointers, and has " + handles + " ball handles.";
+        output += "This player has scored " + midRangeScored +" mid range shots, and has scored " + getPoints() + " points.";
         return output;
     }
 

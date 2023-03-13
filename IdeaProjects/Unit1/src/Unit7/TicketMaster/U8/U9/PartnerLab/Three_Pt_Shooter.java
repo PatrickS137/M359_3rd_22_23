@@ -7,7 +7,7 @@ public class Three_Pt_Shooter extends Player{
     private int threePtScored = 0;
     private int handles;
     public Three_Pt_Shooter(String name, String team, int speed, int strength, int t, int h){
-        super(name, team, speed, strength);
+        super(name, team, speed, strength, 0);
         threePt = t;
         handles = h;
     }
@@ -36,8 +36,8 @@ public class Three_Pt_Shooter extends Player{
     }
 
 
-    public String displayStats(){
-        String output = super.displayStats();
+    public String toString(){
+        String output = super.toString();
         output += "Handles: " + handles;
         output += "Three Point %: " + threePt;
         output += "This player has scored " + threePtScored +" three pointers, and has " + handles + " ball handles.";
