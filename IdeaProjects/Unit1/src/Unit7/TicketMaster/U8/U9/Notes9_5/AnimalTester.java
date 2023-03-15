@@ -23,7 +23,7 @@ public class AnimalTester
        barn[5] = new Pig("Max", true);
 
        Cow dairyCow = new Cow("Milk Cow", "Dairy");
-       Cow beefCow = new Cow("Beef Cow", "Beef"):
+       Cow beefCow = new Cow("Beef Cow", "Beef");
        Animal someCow = new Cow("Random Cow","Dairy");
 
        dairyCow.milkCow();

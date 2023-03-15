@@ -29,9 +29,10 @@ public class Three_Pt_Shooter extends Player{
         if (shotPt > 85) {
             threePtScored++;
             System.out.println("Scored Buzzer Beater Three Pointer");
+            System.out.println("Game Over!");
         }
         else{
-            System.out.println("And the game ends");
+            System.out.println("And the game ends!");
         }
     }
 
@@ -42,5 +43,9 @@ public class Three_Pt_Shooter extends Player{
         output += "Three Point %: " + threePt;
         output += "This player has scored " + threePtScored +" three pointers, and has " + handles + " ball handles.";
         return output;
+    }
+
+    public int getThreePt() {
+        return threePt;
     }
 }

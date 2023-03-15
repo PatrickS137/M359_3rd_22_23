@@ -12,20 +12,25 @@ public class Mid_Player extends Player{
         midRange = m;
         layup = l;
     }
-    public void midRange(){
+    public boolean midRange(){
         int shotPt = (((int)(Math.random() * 100))/100) * midRange;
         if(shotPt > 65){
             midRangeScored++;
-            System.out.println("Scored Mid Range");
+            return true;
+        }
+        else{
+            return false;
         }
     }
-    public void layup(Mid_Player player){
+    public boolean layup(Mid_Player player){
         int random = (int)(Math.random() * 100);
         if(getSpeed() > player.getSpeed() || (random/100 * layup) > 80){
             if(layup > 20){
-                System.out.println("Scored layup");
+                return true;
             }
+            return false;
         }
+        return false;
     }
 
     public String toString(){

@@ -8,40 +8,44 @@ public class Defense_Guy extends Player{
     private int blockChance;
     private int blocks;
     private int steals;
-    private int rebounds;
     public Defense_Guy(String name, String team, int speed, int strength, int b){
         super(name, team, speed, strength, 0);
         blockChance = b;
-        rebounds = 0;
         steals = 0;
     }
-    public void steal(){
+    public boolean steal(){
         int stealChance = (int)(Math.random() * 100);
         int keepChance = (int)(Math.random() * 100);
         if(stealChance>keepChance){
             steals ++;
-            System.out.println("The defender steals the ball!");
+            return true;
         }
         else{
-            System.out.println("The shooter got away");
+            return false;
         }
     }
-    public void blocks(Player pl){
+    public boolean blocks(Player pl){
         int random = (int)(Math.random() * 100);
         if(pl instanceof Mid_Player){
-            if(((Mid_Player)pl).getMidRange() > blockChance && random > 70){
-                System.out.println("Blocked");
-            }else if(blockChance > ((Mid_Player)pl).getMidRange()){
-                System.out.println("Blocked");
+            if(blockChance > ((Mid_Player)pl).getMidRange()){
+                return true;
+            }else if(random > 70){
+                return true;
+            }
+        } else if(pl instanceof Three_Pt_Shooter){
+            if(blockChance > ((Three_Pt_Shooter)pl).getThreePt()){
+                return true;
+            }else if(random > 70){
+                return true;
             }
         }
+        return false;
     }
     @Override
     public String toString() {
         String output = super.toString();
         output += "Blocks: " + blocks;
         output += "Steals: " + steals;
-        output += "Rebounds: " + rebounds;
         output += "This player has scored " + "0" + " three pointers, because they are defense";
         return output;
     }
