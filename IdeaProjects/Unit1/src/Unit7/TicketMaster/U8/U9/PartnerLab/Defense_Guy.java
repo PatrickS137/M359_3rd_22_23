@@ -8,11 +8,12 @@ public class Defense_Guy extends Player{
     private int blockChance;
     private int blocks;
     private int steals;
-    public Defense_Guy(String name, String team, int speed, int strength, int b){
-        super(name, team, speed, strength, 0);
-        blockChance = b;
+    public Defense_Guy(String name, String team){
+        super(name, team,  (int)(Math.random()*40 + 60), (int)(Math.random()*60 + 40), 0);
+        blockChance = (int)(Math.random() * 20) + 30;
         steals = 0;
     }
+    @Override
     public boolean steal(){
         int stealChance = (int)(Math.random() * 100);
         int keepChance = (int)(Math.random() * 100);
@@ -24,6 +25,7 @@ public class Defense_Guy extends Player{
             return false;
         }
     }
+    @Override
     public boolean blocks(Player pl){
         int random = (int)(Math.random() * 100);
         if(pl instanceof Mid_Player){

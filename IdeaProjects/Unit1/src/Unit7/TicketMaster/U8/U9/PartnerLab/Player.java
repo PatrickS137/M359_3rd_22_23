@@ -26,7 +26,24 @@ public class Player {
         output += "Strength: " + getStrength()+"/100";
         return output;
     }
+    //-------------------Defense
+    public boolean steal(){
+        return false;
+    }
+    public boolean blocks(Player pl){
+        return false;
+    }
+    //-------------------3pt
 
+    public void shootThree(){}
+    //-------------------Mid player
+    public boolean midRange(){
+        return false;
+    }
+    public boolean layup(Player pl){
+        return false;
+    }
+    //-------------------
     public String getName() {
         return name;
     }

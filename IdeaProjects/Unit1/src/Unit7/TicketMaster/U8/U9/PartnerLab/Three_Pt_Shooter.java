@@ -6,33 +6,16 @@ public class Three_Pt_Shooter extends Player{
     private int threePt;
     private int threePtScored = 0;
     private int handles;
-    public Three_Pt_Shooter(String name, String team, int speed, int strength, int t, int h){
-        super(name, team, speed, strength, 0);
-        threePt = t;
-        handles = h;
+    public Three_Pt_Shooter(String name, String team){
+        super(name, team, (int)(Math.random()*40 + 60), (int)(Math.random()*30 + 30), 0);
+        threePt = (int)(Math.random() * 40) + 60;
+        handles = (int)(Math.random() * 30) + 70;
     }
-    public void shootThree(double timeLeft){
-        if(timeLeft < 0){
-            buzzerBeater();
-        }
-        else {
-            int shotPt = (int) (Math.random() * 100) * threePt;
-            if (shotPt > 65) {
-                threePtScored++;
-                System.out.println("Scored Three Pointer");
-            }
-        }
-    }
-
-    public void buzzerBeater(){
+    @Override
+    public void shootThree(){
         int shotPt = (int) (Math.random() * 100) * threePt;
-        if (shotPt > 85) {
+        if (shotPt > 65) {
             threePtScored++;
-            System.out.println("Scored Buzzer Beater Three Pointer");
-            System.out.println("Game Over!");
-        }
-        else{
-            System.out.println("And the game ends!");
         }
     }
 

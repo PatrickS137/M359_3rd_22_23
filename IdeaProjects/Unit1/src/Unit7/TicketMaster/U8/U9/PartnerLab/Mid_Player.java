@@ -7,11 +7,14 @@ public class Mid_Player extends Player{
     private int midRange;
     private int midRangeScored;
     private int layup;
-    public Mid_Player(String name, String team, int speed, int strength, int m, int l){
-        super(name, team, speed, strength, 0);
-        midRange = m;
-        layup = l;
+    public Mid_Player(String name, String team){
+        super(name, team, (int)(Math.random()*40 + 60), (int)(Math.random()*30 + 30), 0);
+
+        midRange = (int)(Math.random() * 30) + 40;;
+        layup =  (int)(Math.random() * 20) + 80;
+
     }
+    @Override
     public boolean midRange(){
         int shotPt = (((int)(Math.random() * 100))/100) * midRange;
         if(shotPt > 65){
@@ -22,7 +25,8 @@ public class Mid_Player extends Player{
             return false;
         }
     }
-    public boolean layup(Mid_Player player){
+    @Override
+    public boolean layup(Player player){
         int random = (int)(Math.random() * 100);
         if(getSpeed() > player.getSpeed() || (random/100 * layup) > 80){
             if(layup > 20){
@@ -32,7 +36,6 @@ public class Mid_Player extends Player{
         }
         return false;
     }
-
     public String toString(){
         String output = super.toString();
         output += "Mid Range %: " + midRange;
