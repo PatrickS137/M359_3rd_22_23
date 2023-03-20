@@ -20,9 +20,8 @@ public class SimsGame {
         showCommands+="\n|=   5 to quit";
         showCommands+="\n|- ---------------------- -|";
 
-        System.out.println(showCommands);
 
-
+        System.out.println("Welcome to the Court!\n");
 
         Scanner s = new Scanner(System.in);
 
@@ -60,33 +59,37 @@ public class SimsGame {
 
         boolean flag = true;
         boolean player1turn = false;
-        System.out.println("Type 0 to show instructions again");
         System.out.println(showCommands);
 
+        int choice = 0;
         while (flag) {
-            int choice;
             player1turn = !player1turn;
             if(player1turn) {
+                System.out.println(p1_team + "'s turn!\n");
                 if (choice != 0 && p2Players[2].steal()) {
                     player1turn = false;
-                    System.out.println("The " + p2_team + "s have stolen the ball!");
+                    System.out.println("The " + p2_team + " have stolen the ball!");
+                    System.out.println("Turnover!");
                 };
-            }
-            else {
+            } else {
+                System.out.println(p2_team + "'s turn!\n");
                 if (choice != 0 && p1Players[2].steal()) {
                     player1turn = true;
-                    System.out.println("The " + p1_team + "s have stolen the ball!");
+                    System.out.println("The " + p1_team + " have stolen the ball!");
+                    System.out.println("Turnover!");
                 }
             }
             String currentPlayer = player1turn ? "Player 1" : "Player 2";
 
-            System.out.println(currentPlayer + " enter a number here...");
+            System.out.println("\n" + currentPlayer + " enter a command here...");
             try{
                 choice = s.nextInt();
+
 //--------------------------------------------------------------------------------------------
                 if (choice <0|| choice >6){
-                    System.out.println("Please type an integer 1-6 (or 0 to show instructions)");
+                    System.out.println("Please type an integer 1-5 (or 0 to show instructions)");
                     s.nextLine();
+                    player1turn = !player1turn;
                 }
 //--------------------------------------------------------------------------------------------
                 else if (choice == 0){
@@ -114,9 +117,9 @@ public class SimsGame {
                             p2Points += 3;
                         }
                     }
+                    System.out.println();
 //--------------------------------------------------------------------------------------------
                 }else if (choice == 2){
-                    System.out.println("Layup");
                     if (player1turn) {
                         System.out.println(p1_mid_Name + " on the " + p1_team + " attempts a layup!\n...");
                         if (p1Players[1].layup(p2Players[1])){
@@ -136,6 +139,7 @@ public class SimsGame {
                             System.out.println("Aaaaand " + p2_mid_Name + " it's no good!");
                         }
                     }
+                    System.out.println();
                 }
 //--------------------------------------------------------------------------------------------
                 else if (choice == 3) {
@@ -158,6 +162,7 @@ public class SimsGame {
                             p2Points += 2;
                         }
                     }
+                    System.out.println();
                 }
 //--------------------------------------------------------------------------------------------
                 else if (choice == 4) {
@@ -172,12 +177,13 @@ public class SimsGame {
                             System.out.println(p);
                         }
                     }
+                    System.out.println();
                 } else if (choice == 5){
-                    System.out.println("Final Score: ");
+                    System.out.println("Final Score: \n");
                     System.out.println(p1_team + ": " + p1Points);
-                    System.out.println(p2_team + ": " + p2Points);
+                    System.out.println(p2_team + ": " + p2Points + "\n");
                     String winner = (p1Points > p2Points) ? p1_team : p2_team;
-                    System.out.println("The " + winner + "s have won the game!");
+                    System.out.println("The " + winner + " have won the game!\n");
                     System.out.println("getting toaster ready...");
                     s.close();
                     flag = false;
@@ -188,6 +194,7 @@ public class SimsGame {
 
                 System.out.println("Please type an integer 1-5 (or 0 to show instructions)");
                 s.nextLine();
+                player1turn = !player1turn;
             }
         }
     }

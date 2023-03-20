@@ -6,7 +6,6 @@ public class Player {
     private int speed;
     private int strength;
     private int points;
-    //name
 
     public Player(String name, String team, int speed, int strength, int points) {
         this.name = name;
@@ -17,33 +16,29 @@ public class Player {
     }
 
 
-    //stats
     public String toString(){
         String output = "";
-        output += "stats for "+ getName();
-        output += "--------------------------------";
-        output += "Speed: " + getSpeed() + "MPH";
-        output += "Strength: " + getStrength()+"/100";
+        output += "stats for "+ getName() + "\n";
+        output += "--------------------------------"  + "\n";
+        output += "Speed: " + getSpeed() + "MPH"  + "\n";
+        output += "Strength: " + getStrength()+"/100"  + "\n";
         return output;
     }
-    //-------------------Defense
+    //Empty methods to be inherited by classes
     public boolean steal(){
         return false;
     }
     public boolean blocks(Player pl){
         return false;
     }
-    //-------------------3pt
-
     public void shootThree(){}
-    //-------------------Mid player
     public boolean midRange(){
         return false;
     }
     public boolean layup(Player pl){
         return false;
     }
-    //-------------------
+
     public String getName() {
         return name;
     }
@@ -78,5 +73,9 @@ public class Player {
 
     public int getPoints() {
         return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
